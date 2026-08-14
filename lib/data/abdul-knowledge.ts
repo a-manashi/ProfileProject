@@ -1,3 +1,5 @@
+import "server-only";
+
 export const abdulKnowledge = {
   identity: {
     name: "Abdul Manashi",

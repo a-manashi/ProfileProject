@@ -1,29 +1,11 @@
 import { completeChat, ProviderError, type ChatTurn } from "@/lib/ai/provider";
 
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
+export const maxDuration = 15;
+
 const MAX_MESSAGE_LENGTH = 800;
 const MAX_HISTORY = 12;
-const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
-const RATE_LIMIT_MAX = 15;
-
-const hits = new Map<string, number[]>();
-
-function clientIp(request: Request) {
-  const forwarded = request.headers.get("x-forwarded-for");
-  if (forwarded) return forwarded.split(",")[0]?.trim() || "unknown";
-  return request.headers.get("x-real-ip") ?? "unknown";
-}
-
-function isRateLimited(ip: string) {
-  const now = Date.now();
-  const recent = (hits.get(ip) ?? []).filter((time) => now - time < RATE_LIMIT_WINDOW_MS);
-  if (recent.length >= RATE_LIMIT_MAX) {
-    hits.set(ip, recent);
-    return true;
-  }
-  recent.push(now);
-  hits.set(ip, recent);
-  return false;
-}
 
 function isTurn(value: unknown): value is ChatTurn {
   if (!value || typeof value !== "object") return false;
@@ -35,13 +17,6 @@ function isTurn(value: unknown): value is ChatTurn {
 }
 
 export async function POST(request: Request) {
-  if (isRateLimited(clientIp(request))) {
-    return Response.json(
-      { error: "Too many questions. Please try again in a few minutes." },
-      { status: 429 },
-    );
-  }
-
   let body: unknown;
   try {
     body = await request.json();
@@ -85,7 +60,7 @@ export async function POST(request: Request) {
   } catch (error) {
     if (error instanceof ProviderError && error.code === "not_configured") {
       return Response.json(
-        { error: "Ask Abdul AI is not configured yet. Add an AI_API_KEY to enable it." },
+        { error: "The assistant is temporarily unavailable." },
         { status: 503 },
       );
     }

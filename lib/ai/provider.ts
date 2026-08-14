@@ -1,3 +1,5 @@
+import "server-only";
+
 import { buildSystemPrompt } from "@/lib/ai/portfolio-context";
 
 export type ChatTurn = {
@@ -35,22 +37,29 @@ export async function completeChat({ messages, voice = false }: CompletionOption
   );
   const model = process.env.AI_MODEL ?? "gpt-5.6-luna";
 
-  const response = await fetch(`${baseUrl}/chat/completions`, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      model,
-      temperature: 0.4,
-      max_tokens: voice ? 220 : 380,
-      messages: [
-        { role: "system", content: buildSystemPrompt(voice) },
-        ...messages,
-      ],
-    }),
-  });
+  let response: Response;
+  try {
+    response = await fetch(`${baseUrl}/chat/completions`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        model,
+        temperature: 0.4,
+        max_tokens: voice ? 220 : 380,
+        messages: [
+          { role: "system", content: buildSystemPrompt(voice) },
+          ...messages,
+        ],
+      }),
+      signal: AbortSignal.timeout(12_000),
+      cache: "no-store",
+    });
+  } catch {
+    throw new ProviderError("upstream", "The assistant could not complete that request.");
+  }
 
   if (!response.ok) {
     throw new ProviderError("upstream", "The assistant could not complete that request.");

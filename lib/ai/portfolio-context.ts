@@ -1,3 +1,5 @@
+import "server-only";
+
 import { formatKnowledgeBase } from "@/lib/data/abdul-knowledge";
 
 export function buildSystemPrompt(voice: boolean) {
