@@ -14,8 +14,8 @@ export default function OpenGraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#0B0D10",
-          color: "#E8EAED",
+          background: "#0A0C10",
+          color: "#FFFFFF",
           padding: 72,
         }}
       >
@@ -25,27 +25,27 @@ export default function OpenGraphImage() {
             fontSize: 20,
             letterSpacing: "0.18em",
             textTransform: "uppercase",
-            color: "#5E8B8A",
+            color: "#22D3EE",
           }}
         >
           Senior Full-Stack Engineer
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ fontSize: 72, letterSpacing: "-0.04em", lineHeight: 1.05 }}>
-            Abdul Manashi
+          <div style={{ display: "flex", fontSize: 72, letterSpacing: "-0.04em", lineHeight: 1.05 }}>
+            Abdul <span style={{ color: "#22D3EE", marginLeft: 16 }}>Manashi</span>
           </div>
           <div
             style={{
               marginTop: 20,
               fontSize: 28,
-              color: "#9AA3AD",
+              color: "#94A3B8",
               maxWidth: 820,
             }}
           >
             I build software that solves real business problems.
           </div>
         </div>
-        <div style={{ display: "flex", fontSize: 20, color: "#8FB8A8" }}>
+        <div style={{ display: "flex", fontSize: 20, color: "#22D3EE" }}>
           Python · Django · FastAPI · React · PostgreSQL · AWS
         </div>
       </div>

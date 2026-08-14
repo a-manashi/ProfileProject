@@ -20,7 +20,7 @@ export function Hero() {
             id="hero-name"
             className="hero-in hero-in-1 mt-4 font-display text-5xl tracking-tight text-ink sm:text-6xl lg:text-7xl"
           >
-            {hero.headline}
+            Abdul <span className="text-accent">Manashi</span>
           </h1>
           <p className="hero-in hero-in-2 mt-5 font-display text-xl text-ink md:text-2xl">
             {hero.tagline}

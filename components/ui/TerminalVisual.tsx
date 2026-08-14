@@ -1,10 +1,10 @@
 export function TerminalVisual() {
   return (
-    <div className="relative overflow-hidden rounded-xl border border-line bg-[#0a0c0f] shadow-[0_0_0_1px_rgba(255,255,255,0.02)]">
+    <div className="relative overflow-hidden rounded-xl border border-line bg-canvas shadow-[0_0_40px_rgba(34,211,238,0.06)]">
       <div className="flex items-center gap-2 border-b border-line px-4 py-3">
-        <span className="size-2.5 rounded-full bg-[#3d444d]" />
-        <span className="size-2.5 rounded-full bg-[#3d444d]" />
-        <span className="size-2.5 rounded-full bg-[#3d444d]" />
+        <span className="size-2.5 rounded-full bg-[#ff5f57]" />
+        <span className="size-2.5 rounded-full bg-[#febc2e]" />
+        <span className="size-2.5 rounded-full bg-[#28c840]" />
         <p className="ml-2 font-mono text-[11px] tracking-wide text-mute">
           system.architect — inspect
         </p>
@@ -33,7 +33,7 @@ export function TerminalVisual() {
         <div className="border-t border-line pt-3">
           <p>
             <span className="text-mute">uptime</span>
-            <span className="ml-6 text-ink">10+ years</span>
+            <span className="ml-6 text-accent">10+ years</span>
           </p>
           <p>
             <span className="text-mute">status</span>
