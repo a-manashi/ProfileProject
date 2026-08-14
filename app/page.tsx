@@ -1,6 +1,7 @@
 import { About } from "@/components/About";
 import { AIEngineering } from "@/components/AIEngineering";
 import { Architecture } from "@/components/Architecture";
+import { AskAbdulAIMount } from "@/components/chatbot/AskAbdulAIMount";
 import { Contact } from "@/components/Contact";
 import { EngineeringPhilosophy } from "@/components/EngineeringPhilosophy";
 import { Experience } from "@/components/Experience";
@@ -28,6 +29,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <AskAbdulAIMount />
     </>
   );
 }

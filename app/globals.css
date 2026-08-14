@@ -129,13 +129,181 @@ body {
   }
 }
 
+.ask-launcher-face {
+  animation: ask-launcher-pulse 4.8s ease-in-out infinite;
+}
+
+@keyframes ask-launcher-pulse {
+  0%,
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 0 24px rgba(34, 211, 238, 0.16);
+  }
+
+  50% {
+    transform: translateY(-3px);
+    box-shadow: 0 0 32px rgba(34, 211, 238, 0.28);
+  }
+}
+
+.ask-window {
+  animation: ask-window-in 280ms ease both;
+}
+
+@keyframes ask-window-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.avatar-stage {
+  animation: avatar-breathe 5s ease-in-out infinite;
+}
+
+@keyframes avatar-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.025);
+  }
+}
+
+.avatar-ring,
+.avatar-orbit {
+  transform-origin: 100px 100px;
+}
+
+.avatar-listening .avatar-ring,
+.avatar-speaking .avatar-ring {
+  animation: avatar-ring-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes avatar-ring-pulse {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.avatar-thinking .avatar-orbit {
+  animation: avatar-spin 8s linear infinite;
+}
+
+@keyframes avatar-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.avatar-listening .avatar-eyes,
+.avatar-speaking .avatar-eyes {
+  filter: brightness(1.35);
+}
+
+.avatar-speaking .avatar-mouth {
+  transform-origin: 100px 118px;
+  animation: avatar-talk 0.32s ease-in-out infinite;
+}
+
+@keyframes avatar-talk {
+  50% {
+    transform: scaleY(1.85);
+  }
+}
+
+.avatar-waveform line {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.avatar-listening .avatar-waveform line,
+.avatar-speaking .avatar-waveform line {
+  animation: avatar-wave 0.7s ease-in-out infinite;
+}
+
+.avatar-waveform line:nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+.avatar-waveform line:nth-child(3) {
+  animation-delay: 0.16s;
+}
+
+.avatar-waveform line:nth-child(4) {
+  animation-delay: 0.04s;
+}
+
+.avatar-waveform line:nth-child(5) {
+  animation-delay: 0.2s;
+}
+
+.avatar-waveform line:nth-child(6) {
+  animation-delay: 0.12s;
+}
+
+@keyframes avatar-wave {
+  50% {
+    transform: scaleY(1.7);
+  }
+}
+
+.avatar-particle {
+  animation: avatar-float 6s ease-in-out infinite;
+}
+
+.avatar-particle.p2 {
+  animation-delay: 1.2s;
+}
+
+.avatar-particle.p3 {
+  animation-delay: 2.1s;
+}
+
+.avatar-particle.p4 {
+  animation-delay: 3s;
+}
+
+@keyframes avatar-float {
+  50% {
+    transform: translateY(-4px);
+    opacity: 0.45;
+  }
+}
+
+.avatar-error .avatar-eyes {
+  opacity: 0.45;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
 
   .hero-in,
-  .cursor-blink {
+  .cursor-blink,
+  .ask-launcher-face,
+  .ask-window,
+  .avatar-stage,
+  .avatar-listening .avatar-ring,
+  .avatar-speaking .avatar-ring,
+  .avatar-thinking .avatar-orbit,
+  .avatar-speaking .avatar-mouth,
+  .avatar-listening .avatar-waveform line,
+  .avatar-speaking .avatar-waveform line,
+  .avatar-particle {
     animation: none;
   }
 
