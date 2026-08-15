@@ -10,7 +10,7 @@ export const site = {
     "Problem Solver",
   ],
   tagline: "I build software that solves real business problems.",
-  email: "YOUR_EMAIL@example.com",
+  email: "abdul.manashi@hotmail.com",
   // Replace with your production domain for Open Graph and canonical URLs.
   siteUrl: "https://example.com",
   nav: [
@@ -29,7 +29,7 @@ export const site = {
     },
     {
       label: "LinkedIn",
-      href: "https://www.linkedin.com/in/YOUR_LINKEDIN",
+      href: "https://www.linkedin.com/in/abdul-manashi-39b64522/",
       icon: "linkedin",
     },
     {

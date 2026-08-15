@@ -119,7 +119,7 @@ export const abdulKnowledge = {
   projectFit:
     "Abdul is particularly well suited to complex web applications, analytics platforms, automation systems, business management software, subscription systems, and full-stack products where backend architecture and business logic are important.",
   contact:
-    "Visitors can contact Abdul through the Contact section of this portfolio. Email and professional profile links are listed there. Do not invent a different email address or social URL.",
+    "Visitors can email Abdul at abdul.manashi@hotmail.com or reach him on LinkedIn at https://www.linkedin.com/in/abdul-manashi-39b64522/. They can also use the Contact section of this portfolio. Do not invent a different email address or social URL.",
   unknownPolicy:
     "If information is not in this knowledge base, say: I don't have that information in Abdul's portfolio yet.",
 } as const;
