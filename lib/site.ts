@@ -24,18 +24,13 @@ export const site = {
   socials: [
     {
       label: "GitHub",
-      href: "https://github.com/YOUR_GITHUB",
+      href: "https://github.com/a-manashi",
       icon: "github",
     },
     {
       label: "LinkedIn",
       href: "https://www.linkedin.com/in/abdul-manashi-39b64522/",
       icon: "linkedin",
-    },
-    {
-      label: "Profile",
-      href: "https://YOUR_PROFILE.example.com",
-      icon: "globe",
     },
   ] satisfies SocialLink[],
   seo: {
