@@ -11,7 +11,6 @@ export const site = {
   ],
   tagline: "I build software that solves real business problems.",
   email: "abdul.manashi@hotmail.com",
-  // Replace with your production domain for Open Graph and canonical URLs.
   siteUrl: "https://example.com",
   nav: [
     { label: "Home", href: "#home" },
@@ -39,3 +38,16 @@ export const site = {
       "Senior Full-Stack Engineer with 10+ years of experience in Python, Django, FastAPI, React, AWS, Docker, PostgreSQL, MySQL, AI-assisted development, analytics, automation, and scalable web applications.",
   },
 } as const;
+
+export function getSiteUrl() {
+  const explicit = process.env.NEXT_PUBLIC_SITE_URL;
+  if (explicit) return explicit.replace(/\/$/, "");
+
+  const production = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+  if (production) return `https://${production.replace(/\/$/, "")}`;
+
+  const vercel = process.env.VERCEL_URL;
+  if (vercel) return `https://${vercel.replace(/\/$/, "")}`;
+
+  return "http://localhost:3000";
+}

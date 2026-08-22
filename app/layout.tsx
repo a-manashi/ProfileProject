@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Mono, IBM_Plex_Sans, Instrument_Sans } from "next/font/google";
-import { site } from "@/lib/site";
+import { getSiteUrl, site } from "@/lib/site";
 import "./globals.css";
 
 const instrumentSans = Instrument_Sans({
@@ -30,9 +30,16 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(site.siteUrl),
+  metadataBase: new URL(getSiteUrl()),
   title: site.seo.title,
   description: site.seo.description,
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/icon", type: "image/png", sizes: "32x32" },
+    ],
+    apple: [{ url: "/apple-icon", type: "image/png", sizes: "180x180" }],
+  },
   openGraph: {
     title: site.seo.title,
     description: site.seo.description,
