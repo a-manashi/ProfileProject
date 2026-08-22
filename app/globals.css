@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --canvas: #0a0c10;
+  --canvas: #070b14;
   --surface: #111827;
   --elevated: #1a2234;
   --line: #1e293b;
@@ -29,7 +29,7 @@
 
 html {
   scroll-behavior: smooth;
-  scrollbar-color: #1e293b #0a0c10;
+  scrollbar-color: #1e293b #070b14;
 }
 
 body {
@@ -68,10 +68,22 @@ body {
 
 .hero-grid {
   background-image:
-    linear-gradient(to right, rgba(34, 211, 238, 0.045) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(34, 211, 238, 0.045) 1px, transparent 1px);
-  background-size: 48px 48px;
-  mask-image: radial-gradient(ellipse 70% 60% at 70% 40%, black 20%, transparent 75%);
+    linear-gradient(to right, rgba(34, 211, 238, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(34, 211, 238, 0.04) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse 75% 65% at 55% 40%, black 18%, transparent 78%);
+}
+
+.hero-beam {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    118deg,
+    transparent 28%,
+    rgba(34, 211, 238, 0.07) 48%,
+    transparent 66%
+  );
 }
 
 .hero-in {

@@ -3,6 +3,7 @@ import { AIEngineering } from "@/components/AIEngineering";
 import { Architecture } from "@/components/Architecture";
 import { AskAbdulAIMount } from "@/components/chatbot/AskAbdulAIMount";
 import { Contact } from "@/components/Contact";
+import { CredibilityBar } from "@/components/CredibilityBar";
 import { EngineeringPhilosophy } from "@/components/EngineeringPhilosophy";
 import { Experience } from "@/components/Experience";
 import { Footer } from "@/components/Footer";
@@ -18,6 +19,7 @@ export default function Home() {
       <Navbar />
       <main id="main">
         <Hero />
+        <CredibilityBar />
         <About />
         <Skills />
         <WhatIBuild />

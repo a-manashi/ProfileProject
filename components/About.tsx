@@ -6,8 +6,12 @@ import { about } from "@/lib/content";
 
 export function About() {
   return (
-    <Section id="about" labelledBy="about-title">
-      <Container>
+    <Section
+      id="about"
+      labelledBy="about-title"
+      className="flex min-h-[100dvh] items-center"
+    >
+      <Container className="w-full">
         <Reveal>
           <SectionHeading
             eyebrow={about.eyebrow}
@@ -16,7 +20,14 @@ export function About() {
           />
           <div className="mt-8 max-w-3xl space-y-5 text-base leading-relaxed text-mute">
             {about.paragraphs.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
+              <p
+                key={paragraph}
+                className={
+                  paragraph.includes("PHP") ? "font-medium text-accent" : undefined
+                }
+              >
+                {paragraph}
+              </p>
             ))}
           </div>
         </Reveal>

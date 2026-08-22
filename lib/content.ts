@@ -8,7 +8,7 @@ import type {
 } from "@/lib/types";
 
 export const hero = {
-  eyebrow: "Senior Full-Stack Engineer",
+  eyebrow: "10+ years · Senior Full-Stack Engineer · AI-assisted workflows",
   headline: "Abdul Manashi",
   tagline: "I build software that solves real business problems.",
   summary:
@@ -26,6 +26,25 @@ export const hero = {
   primaryCta: { label: "View My Work", href: "#work" },
   secondaryCta: { label: "Let's Work Together", href: "#contact" },
 };
+
+export const credibility = [
+  {
+    title: "10+ years",
+    detail: "production software engineering",
+  },
+  {
+    title: "Full-stack systems",
+    detail: "Python, Django, FastAPI, React",
+  },
+  {
+    title: "AI-assisted workflow",
+    detail: "faster exploration, human judgment",
+  },
+  {
+    title: "Data and infrastructure",
+    detail: "analytics, automation, AWS, Docker",
+  },
+] as const;
 
 export const about = {
   eyebrow: "01 / About",

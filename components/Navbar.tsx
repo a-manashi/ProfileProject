@@ -6,13 +6,38 @@ import { Container } from "@/components/ui/Container";
 import { cn } from "@/lib/cn";
 import { site } from "@/lib/site";
 
+function activeSection() {
+  const ids = site.nav.map((item) => item.href.slice(1));
+  const offset = 96;
+  let current = ids[0] ?? "home";
+
+  for (const id of ids) {
+    const section = document.getElementById(id);
+    if (!section) continue;
+    if (section.getBoundingClientRect().top - offset <= 0) {
+      current = id;
+    }
+  }
+
+  const atBottom =
+    window.innerHeight + window.scrollY >=
+    document.documentElement.scrollHeight - 8;
+  if (atBottom) current = "contact";
+
+  return `#${current}`;
+}
+
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState("#home");
   const [open, setOpen] = useState(false);
   const menuId = useId();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 8);
+      setActive(activeSection());
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -44,7 +69,7 @@ export function Navbar() {
           : "border-transparent bg-transparent",
       )}
     >
-      <Container className="flex h-16 items-center justify-between">
+      <Container className="flex h-[4.25rem] items-center justify-between">
         <a
           href="#home"
           className="flex items-center gap-3 text-ink"
@@ -60,16 +85,31 @@ export function Navbar() {
 
         <nav aria-label="Primary" className="hidden items-center gap-8 md:flex">
           <ul className="flex items-center gap-7">
-            {site.nav.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  className="text-sm text-mute transition-colors hover:text-ink"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
+            {site.nav.map((item) => {
+              const isActive = active === item.href;
+              return (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    aria-current={isActive ? "page" : undefined}
+                    className={cn(
+                      "relative pb-1 text-sm tracking-wide transition-colors",
+                      isActive
+                        ? "text-accent"
+                        : "text-mute hover:text-ink",
+                    )}
+                  >
+                    {item.label}
+                    {isActive ? (
+                      <span
+                        className="absolute inset-x-0 -bottom-0.5 h-px bg-accent"
+                        aria-hidden
+                      />
+                    ) : null}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
           <a
             href="#contact"
@@ -98,17 +138,24 @@ export function Navbar() {
       >
         <nav aria-label="Mobile">
           <ul className="flex flex-col px-5 py-3">
-            {site.nav.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  className="block py-3 text-base text-ink"
-                  onClick={close}
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
+            {site.nav.map((item) => {
+              const isActive = active === item.href;
+              return (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    aria-current={isActive ? "page" : undefined}
+                    className={cn(
+                      "block py-3 text-base",
+                      isActive ? "text-accent" : "text-ink",
+                    )}
+                    onClick={close}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              );
+            })}
             <li>
               <a
                 href="#contact"
