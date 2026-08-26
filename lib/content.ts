@@ -22,6 +22,7 @@ export const hero = {
     "AWS",
     "Docker",
     "AI-Assisted Development",
+    "MCP",
   ],
   primaryCta: { label: "View My Work", href: "#work" },
   secondaryCta: { label: "Let's Work Together", href: "#contact" },
@@ -51,7 +52,7 @@ export const about = {
   title: "About Me",
   paragraphs: [
     "With 10+ years of experience in software development, I have worked across backend engineering, frontend development, databases, cloud infrastructure, analytics, automation, advertising technology, video streaming, e-commerce, and web scraping.",
-    "My current focus is Python-based backend development using Django and FastAPI, combined with React.js on the frontend. I also use AI-assisted development tools as part of my engineering workflow to accelerate development, explore solutions, refactor code, and solve complex technical problems.",
+    "My current focus is Python-based backend development using Django and FastAPI, combined with React.js on the frontend. I also use AI-assisted development tools as part of my engineering workflow to accelerate development, explore solutions, refactor code, and solve complex technical problems. Recently I have built MCP (Model Context Protocol) integrations that allow Claude to connect to Google and other platforms such as Facebook and Reddit.",
     "My background in PHP, cloud infrastructure, databases, and large production systems gives me a broad perspective when designing and building software.",
   ],
 };
@@ -115,6 +116,8 @@ export const skills = {
         "REST APIs",
         "Data processing",
         "AI-assisted development",
+        "MCP",
+        "Claude integrations",
       ],
     },
   ] satisfies SkillCategory[],
@@ -187,6 +190,16 @@ export const whatIBuild = {
         "Academy and writer-focused software",
       ],
     },
+    {
+      title: "MCP / AI Platform Integrations",
+      points: [
+        "Model Context Protocol (MCP) for Claude",
+        "Connections to Google",
+        "Facebook integrations",
+        "Reddit integrations",
+        "Other platform connectors for AI workflows",
+      ],
+    },
   ] satisfies BuildCard[],
 };
 
@@ -237,6 +250,14 @@ export const projects = {
       summary:
         "Built websites and software platforms for online education and publishing-focused businesses.",
       technologies: ["PHP", "Laravel", "React", "MySQL", "APIs"],
+    },
+    {
+      title: "Claude MCP Platform Connectors",
+      problem:
+        "AI assistants need secure, structured access to external platforms instead of one-off, disconnected workflows.",
+      solution:
+        "Built MCP (Model Context Protocol) integrations that allow Claude to connect to Google and other platforms such as Facebook and Reddit.",
+      technologies: ["MCP", "Claude", "APIs", "Google", "Facebook", "Reddit"],
     },
   ] satisfies Project[],
 };
@@ -295,7 +316,7 @@ export const experience = {
     },
     {
       title: "AI-Assisted Engineering",
-      detail: "AI-powered development workflows",
+      detail: "AI-powered development workflows · MCP for Claude",
     },
   ] satisfies ExperienceStage[],
 };
@@ -318,6 +339,8 @@ export const aiEngineering = {
     "Code review assistance",
     "Understanding unfamiliar codebases",
     "Automation",
+    "MCP servers",
+    "Claude platform connectors",
   ],
 };
 

@@ -22,5 +22,6 @@ export const suggestedQuestions = [
   "Tell me about his Python experience.",
   "Has Abdul worked with AWS?",
   "Tell me about his AI-assisted development.",
+  "Has Abdul built MCP integrations for Claude?",
   "What kind of project would Abdul be a good fit for?",
 ];

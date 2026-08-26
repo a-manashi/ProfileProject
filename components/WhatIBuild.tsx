@@ -1,5 +1,6 @@
 import {
   BookOpen,
+  Cable,
   LineChart,
   Radio,
   ScanSearch,
@@ -20,6 +21,7 @@ const cardIcons = [
   Radio,
   ShoppingBag,
   BookOpen,
+  Cable,
 ];
 
 export function WhatIBuild() {

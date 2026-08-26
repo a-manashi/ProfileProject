@@ -11,7 +11,7 @@ export const abdulKnowledge = {
     ],
   },
   summary:
-    "Abdul is a Full-Stack Software Developer with 10+ years of experience building scalable web applications, analytics systems, automation tools, e-commerce platforms, video streaming solutions, and cloud infrastructure. His current specialization is Python, Django, FastAPI, React.js, PostgreSQL, and modern cloud infrastructure. He also uses AI-assisted development tools to improve development speed, productivity, debugging, refactoring, exploration, documentation, and problem solving.",
+    "Abdul is a Full-Stack Software Developer with 10+ years of experience building scalable web applications, analytics systems, automation tools, e-commerce platforms, video streaming solutions, and cloud infrastructure. His current specialization is Python, Django, FastAPI, React.js, PostgreSQL, and modern cloud infrastructure. He also uses AI-assisted development tools to improve development speed, productivity, debugging, refactoring, exploration, documentation, and problem solving. He has built MCP (Model Context Protocol) integrations that allow Claude to connect to Google and other platforms such as Facebook and Reddit.",
   backend: [
     "Python",
     "Django",
@@ -95,6 +95,15 @@ export const abdulKnowledge = {
     "Understanding unfamiliar code",
     "Problem solving",
     "Code review assistance",
+    "MCP servers for Claude",
+    "Connecting Claude to Google, Facebook, Reddit, and other platforms",
+  ],
+  mcp: [
+    "Model Context Protocol (MCP) for Claude",
+    "Google platform connections",
+    "Facebook integrations",
+    "Reddit integrations",
+    "Other platform connectors so Claude can work inside real tools and workflows",
   ],
   aiPhilosophy:
     "AI is an engineering multiplier, not a replacement for engineering judgment.",
@@ -117,7 +126,7 @@ export const abdulKnowledge = {
     },
   ],
   projectFit:
-    "Abdul is particularly well suited to complex web applications, analytics platforms, automation systems, business management software, subscription systems, and full-stack products where backend architecture and business logic are important.",
+    "Abdul is particularly well suited to complex web applications, analytics platforms, automation systems, business management software, subscription systems, full-stack products where backend architecture and business logic are important, and AI integrations such as MCP connectors for Claude.",
   contact:
     "Visitors can email Abdul at abdul.manashi@hotmail.com or reach him on LinkedIn at https://www.linkedin.com/in/abdul-manashi-39b64522/. They can also use the Contact section of this portfolio. Do not invent a different email address or social URL.",
   unknownPolicy:
@@ -141,6 +150,7 @@ export function formatKnowledgeBase() {
     `E-commerce: ${k.ecommerce.join(", ")}`,
     `Online academy / publishing: ${k.educationPublishing.join(", ")}`,
     `AI-assisted development: ${k.aiAssisted.join(", ")}`,
+    `MCP / Claude platform connectors: ${k.mcp.join(", ")}`,
     `AI philosophy: ${k.aiPhilosophy}`,
     `Engineering philosophy:\n${k.philosophy.map((item) => `- ${item.title}: ${item.body}`).join("\n")}`,
     `Project fit: ${k.projectFit}`,
