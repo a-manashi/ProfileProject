@@ -35,7 +35,7 @@ export const site = {
   seo: {
     title: "Abdul Manashi | Senior Full-Stack Engineer",
     description:
-      "Senior Full-Stack Engineer with 10+ years of experience in Python, Django, FastAPI, React, AWS, Docker, PostgreSQL, MySQL, AI-assisted development, analytics, automation, and scalable web applications.",
+      "Senior Full-Stack Engineer with 15+ years of experience in Python, Django, FastAPI, React, AWS, Docker, PostgreSQL, MySQL, AI-assisted development, analytics, automation, and scalable web applications.",
   },
 } as const;
 

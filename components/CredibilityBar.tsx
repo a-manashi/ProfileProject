@@ -3,7 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { credibility } from "@/lib/content";
 
 const icons = {
-  "10+ years": User,
+  "15+ years": User,
   "Full-stack systems": Layers,
   "AI-assisted workflow": BrainCircuit,
   "Data and infrastructure": Database,

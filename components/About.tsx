@@ -20,14 +20,7 @@ export function About() {
           />
           <div className="mt-8 max-w-3xl space-y-5 text-base leading-relaxed text-mute">
             {about.paragraphs.map((paragraph) => (
-              <p
-                key={paragraph}
-                className={
-                  paragraph.includes("PHP") ? "font-medium text-accent" : undefined
-                }
-              >
-                {paragraph}
-              </p>
+              <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
         </Reveal>

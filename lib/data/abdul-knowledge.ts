@@ -11,7 +11,7 @@ export const abdulKnowledge = {
     ],
   },
   summary:
-    "Abdul is a Full-Stack Software Developer with 10+ years of experience building scalable web applications, analytics systems, automation tools, e-commerce platforms, video streaming solutions, and cloud infrastructure. His current specialization is Python, Django, FastAPI, React.js, PostgreSQL, and modern cloud infrastructure. He also uses AI-assisted development tools to improve development speed, productivity, debugging, refactoring, exploration, documentation, and problem solving. He has built MCP (Model Context Protocol) integrations that allow Claude to connect to Google and other platforms such as Facebook and Reddit.",
+    "Abdul is a Full-Stack Software Developer with 15+ years of experience building scalable web applications, analytics systems, automation tools, e-commerce platforms, video streaming solutions, and cloud infrastructure. His current specialization is Python, Django, FastAPI, React.js, PostgreSQL, and modern cloud infrastructure. He also uses AI-assisted development tools to improve development speed, productivity, debugging, refactoring, exploration, documentation, and problem solving. He has built MCP (Model Context Protocol) integrations that allow Claude to connect to Google and other platforms such as Facebook and Reddit.",
   backend: [
     "Python",
     "Django",

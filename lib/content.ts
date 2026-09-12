@@ -8,11 +8,11 @@ import type {
 } from "@/lib/types";
 
 export const hero = {
-  eyebrow: "10+ years · Senior Full-Stack Engineer · AI-assisted workflows",
+  eyebrow: "15+ years · Senior Full-Stack Engineer · AI-assisted workflows",
   headline: "Abdul Manashi",
   tagline: "I build software that solves real business problems.",
   summary:
-    "Full-stack software engineer with 10+ years of experience building scalable applications, analytics platforms, automation systems, e-commerce solutions, video streaming platforms, and cloud infrastructure.",
+    "Full-stack software engineer with 15+ years of experience building scalable applications, analytics platforms, automation systems, e-commerce solutions, video streaming platforms, and cloud infrastructure.",
   focus: [
     "Python",
     "Django",
@@ -30,7 +30,7 @@ export const hero = {
 
 export const credibility = [
   {
-    title: "10+ years",
+    title: "15+ years",
     detail: "production software engineering",
   },
   {
@@ -51,7 +51,7 @@ export const about = {
   eyebrow: "01 / About",
   title: "About Me",
   paragraphs: [
-    "With 10+ years of experience in software development, I have worked across backend engineering, frontend development, databases, cloud infrastructure, analytics, automation, advertising technology, video streaming, e-commerce, and web scraping.",
+    "With 15+ years of experience in software development, I have worked across backend engineering, frontend development, databases, cloud infrastructure, analytics, automation, advertising technology, video streaming, e-commerce, and web scraping.",
     "My current focus is Python-based backend development using Django and FastAPI, combined with React.js on the frontend. I also use AI-assisted development tools as part of my engineering workflow to accelerate development, explore solutions, refactor code, and solve complex technical problems. Recently I have built MCP (Model Context Protocol) integrations that allow Claude to connect to Google and other platforms such as Facebook and Reddit.",
     "My background in PHP, cloud infrastructure, databases, and large production systems gives me a broad perspective when designing and building software.",
   ],
@@ -295,7 +295,7 @@ export const experience = {
   lede: "A compact view of how the work has evolved — not a fabricated employment history.",
   stages: [
     {
-      title: "10+ Years",
+      title: "15+ Years",
       detail: "Software Engineering",
     },
     {

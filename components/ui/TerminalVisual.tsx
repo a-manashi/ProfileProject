@@ -33,7 +33,7 @@ export function TerminalVisual() {
         <div className="border-t border-line pt-3">
           <p>
             <span className="text-mute">uptime</span>
-            <span className="ml-6 text-accent">10+ years</span>
+            <span className="ml-6 text-accent">15+ years</span>
           </p>
           <p>
             <span className="text-mute">status</span>
