@@ -1,57 +1,47 @@
-import {
-  BookOpen,
-  Cable,
-  LineChart,
-  Radio,
-  ScanSearch,
-  ShoppingBag,
-  Warehouse,
-} from "lucide-react";
+import { Cable, Code2, RefreshCw, Workflow } from "lucide-react";
+import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { whatIBuild } from "@/lib/content";
+import { services } from "@/lib/content";
 
-const cardIcons = [
-  LineChart,
-  Warehouse,
-  ScanSearch,
-  Radio,
-  ShoppingBag,
-  BookOpen,
-  Cable,
-];
+const cardIcons = [RefreshCw, Code2, Workflow, Cable] as const;
 
 export function WhatIBuild() {
   return (
-    <Section id="work" labelledBy="work-title">
+    <Section id="services" labelledBy="services-title">
       <Container>
         <Reveal>
           <SectionHeading
-            eyebrow={whatIBuild.eyebrow}
-            title={whatIBuild.title}
-            lede={whatIBuild.lede}
-            titleId="work-title"
+            eyebrow={services.eyebrow}
+            title={services.title}
+            lede={services.lede}
+            titleId="services-title"
           />
         </Reveal>
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {whatIBuild.cards.map((card, index) => {
+        <div className="mt-12 grid gap-4 md:grid-cols-2">
+          {services.cards.map((card, index) => {
             const Icon = cardIcons[index];
             return (
               <Reveal key={card.title} delayMs={index * 50}>
-                <Card className="h-full">
-                  <div className="mb-4 inline-flex size-9 items-center justify-center rounded-md border border-line text-accent">
-                    <Icon size={16} strokeWidth={1.75} />
+                <Card className="flex h-full flex-col">
+                  <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-accent">
+                    Service {String(index + 1).padStart(2, "0")}
+                  </p>
+                  <div className="mt-4 mb-4 inline-flex size-9 items-center justify-center rounded-md border border-line text-accent">
+                    <Icon size={16} strokeWidth={1.75} aria-hidden />
                   </div>
                   <h3 className="font-display text-lg text-ink">{card.title}</h3>
-                  <ul className="mt-4 space-y-2 text-sm leading-relaxed text-mute">
-                    {card.points.map((point) => (
-                      <li key={point} className="flex gap-2">
-                        <span className="mt-2 size-1 shrink-0 rounded-full bg-accent/70" />
-                        <span>{point}</span>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-mute">
+                    {card.description}
+                  </p>
+                  <ul className="mt-6 flex flex-wrap gap-2">
+                    {card.technologies.map((tech) => (
+                      <li key={tech}>
+                        <Badge>{tech}</Badge>
                       </li>
                     ))}
                   </ul>
@@ -60,6 +50,12 @@ export function WhatIBuild() {
             );
           })}
         </div>
+
+        <Reveal>
+          <p className="mt-10 max-w-3xl text-sm leading-relaxed text-mute md:text-base">
+            {services.capability}
+          </p>
+        </Reveal>
       </Container>
     </Section>
   );

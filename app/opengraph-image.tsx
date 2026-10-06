@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Abdul Manashi | Senior Full-Stack Engineer";
+export const alt =
+  "Abdul Manashi | Senior Software Engineer for Complex Web Applications";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -28,10 +29,17 @@ export default function OpenGraphImage() {
             color: "#22D3EE",
           }}
         >
-          Senior Full-Stack Engineer
+          20+ years · Senior Software Engineer
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ display: "flex", fontSize: 72, letterSpacing: "-0.04em", lineHeight: 1.05 }}>
+          <div
+            style={{
+              display: "flex",
+              fontSize: 72,
+              letterSpacing: "-0.04em",
+              lineHeight: 1.05,
+            }}
+          >
             Abdul <span style={{ color: "#22D3EE", marginLeft: 16 }}>Manashi</span>
           </div>
           <div
@@ -39,14 +47,14 @@ export default function OpenGraphImage() {
               marginTop: 20,
               fontSize: 28,
               color: "#94A3B8",
-              maxWidth: 820,
+              maxWidth: 860,
             }}
           >
-            I build software that solves real business problems.
+            Senior Software Engineer for Complex Web Applications
           </div>
         </div>
         <div style={{ display: "flex", fontSize: 20, color: "#22D3EE" }}>
-          Python · Django · FastAPI · React · PostgreSQL · AWS
+          Python · FastAPI · React · Legacy Modernization
         </div>
       </div>
     ),

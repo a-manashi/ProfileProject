@@ -17,7 +17,7 @@ export function Architecture() {
           />
         </Reveal>
 
-        <ol className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <ol className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
           {architecture.steps.map((step, index) => (
             <li key={step.title}>
               <Reveal delayMs={index * 50} className="h-full">
@@ -32,11 +32,22 @@ export function Architecture() {
                     )}
                   </p>
                   <p className="mt-3 font-display text-ink">{step.title}</p>
+                  {step.body ? (
+                    <p className="mt-2 text-sm leading-relaxed text-mute">
+                      {step.body}
+                    </p>
+                  ) : null}
                 </div>
               </Reveal>
             </li>
           ))}
         </ol>
+
+        <Reveal>
+          <p className="mt-8 text-sm leading-relaxed text-mute md:text-base">
+            {architecture.note}
+          </p>
+        </Reveal>
       </Container>
     </Section>
   );

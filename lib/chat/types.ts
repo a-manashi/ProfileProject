@@ -18,10 +18,10 @@ export const VOICE_PREF_KEY = "ask-abdul-ai-voice-responses";
 
 export const suggestedQuestions = [
   "What does Abdul specialize in?",
-  "What kind of software does Abdul build?",
-  "Tell me about his Python experience.",
-  "Has Abdul worked with AWS?",
-  "Tell me about his AI-assisted development.",
-  "Has Abdul built MCP integrations for Claude?",
+  "What services does Abdul offer?",
+  "Can Abdul modernize a legacy PHP application?",
   "What kind of project would Abdul be a good fit for?",
+  "How do I start a project with Abdul?",
+  "Tell me about his Python and FastAPI experience.",
+  "Has Abdul built MCP integrations for Claude?",
 ];

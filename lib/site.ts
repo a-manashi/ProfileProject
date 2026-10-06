@@ -2,24 +2,24 @@ import type { NavItem, SocialLink } from "@/lib/types";
 
 export const site = {
   name: "Abdul Manashi",
-  role: "Senior Full-Stack Engineer",
+  role: "Senior Software Engineer",
   identities: [
-    "Senior Full-Stack Engineer",
+    "Senior Software Engineer",
     "Software Developer",
     "Programmer",
     "Problem Solver",
   ],
-  tagline: "I build software that solves real business problems.",
+  tagline: "Senior Software Engineer for Complex Web Applications",
   email: "abdul.manashi@hotmail.com",
-  siteUrl: "https://example.com",
+  siteUrl: "https://abdulmanashi.com",
   nav: [
     { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
-    { label: "Skills", href: "#skills" },
+    { label: "Services", href: "#services" },
     { label: "Work", href: "#work" },
-    { label: "Engineering", href: "#engineering" },
+    { label: "About", href: "#about" },
     { label: "Contact", href: "#contact" },
   ] satisfies NavItem[],
+  navCta: { label: "Discuss Your Project", href: "#contact" },
   socials: [
     {
       label: "GitHub",
@@ -33,9 +33,10 @@ export const site = {
     },
   ] satisfies SocialLink[],
   seo: {
-    title: "Abdul Manashi | Senior Full-Stack Engineer",
+    title:
+      "Abdul Manashi | Senior Software Engineer | Python, FastAPI, React & Legacy Modernization",
     description:
-      "Senior Full-Stack Engineer with 15+ years of experience in Python, Django, FastAPI, React, AWS, Docker, PostgreSQL, MySQL, AI-assisted development, analytics, automation, and scalable web applications.",
+      "Senior software engineer with 20+ years of experience building and modernizing complex web applications with Python, Django, FastAPI, React, AWS, automation and AI integrations.",
   },
 } as const;
 

@@ -6,12 +6,8 @@ import { about } from "@/lib/content";
 
 export function About() {
   return (
-    <Section
-      id="about"
-      labelledBy="about-title"
-      className="flex min-h-[100dvh] items-center"
-    >
-      <Container className="w-full">
+    <Section id="about" labelledBy="about-title">
+      <Container>
         <Reveal>
           <SectionHeading
             eyebrow={about.eyebrow}
@@ -22,6 +18,10 @@ export function About() {
             {about.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
+            <p>
+              <span className="font-medium text-ink">{about.approachLabel}</span>
+              <span className="mt-2 block">{about.approach}</span>
+            </p>
           </div>
         </Reveal>
       </Container>

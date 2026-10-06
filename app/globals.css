@@ -28,6 +28,7 @@
 }
 
 html {
+  color-scheme: dark;
   scroll-behavior: smooth;
   scrollbar-color: #1e293b #070b14;
 }

@@ -14,15 +14,19 @@ export type SkillCategory = {
   skills: string[];
 };
 
-export type BuildCard = {
+export type Service = {
   title: string;
-  points: string[];
+  description: string;
+  technologies: string[];
 };
 
 export type Project = {
   title: string;
-  problem?: string;
+  challenge?: string;
   solution?: string;
+  approach?: string;
+  businessValue?: string;
+  contribution?: string;
   summary?: string;
   technologies: string[];
 };
@@ -32,11 +36,22 @@ export type Principle = {
   body: string;
 };
 
-export type ExperienceStage = {
+export type WhyHireItem = {
+  key: "experience" | "legacy" | "fullstack" | "ai";
   title: string;
-  detail: string;
+  body: string;
+};
+
+export type AudienceItem = {
+  title: string;
 };
 
 export type ArchitectureStep = {
   title: string;
+  body?: string;
+};
+
+export type ProcessNextStep = {
+  title: string;
+  body: string;
 };

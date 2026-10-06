@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
@@ -6,9 +7,26 @@ import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { projects } from "@/lib/content";
 
+function Field({
+  label,
+  children,
+}: {
+  label: string;
+  children: ReactNode;
+}) {
+  return (
+    <div className="mt-4">
+      <p className="font-mono text-[11px] uppercase tracking-wider text-ink/80">
+        {label}
+      </p>
+      <p className="mt-2 text-sm leading-relaxed text-mute">{children}</p>
+    </div>
+  );
+}
+
 export function Projects() {
   return (
-    <Section labelledBy="projects-title" className="bg-surface/40">
+    <Section id="work" labelledBy="projects-title" className="bg-surface/40">
       <Container>
         <Reveal>
           <SectionHeading
@@ -30,32 +48,20 @@ export function Projects() {
                   {project.title}
                 </h3>
 
-                {project.summary ? (
-                  <p className="mt-4 text-sm leading-relaxed text-mute">
-                    {project.summary}
-                  </p>
+                {project.challenge ? (
+                  <Field label="The Challenge">{project.challenge}</Field>
                 ) : null}
-
-                {project.problem ? (
-                  <div className="mt-5">
-                    <p className="font-mono text-[11px] uppercase tracking-wider text-ink/80">
-                      Problem
-                    </p>
-                    <p className="mt-2 text-sm leading-relaxed text-mute">
-                      {project.problem}
-                    </p>
-                  </div>
-                ) : null}
-
                 {project.solution ? (
-                  <div className="mt-4">
-                    <p className="font-mono text-[11px] uppercase tracking-wider text-ink/80">
-                      Solution
-                    </p>
-                    <p className="mt-2 text-sm leading-relaxed text-mute">
-                      {project.solution}
-                    </p>
-                  </div>
+                  <Field label="The Solution">{project.solution}</Field>
+                ) : null}
+                {project.approach ? (
+                  <Field label="Technical Approach">{project.approach}</Field>
+                ) : null}
+                {project.businessValue ? (
+                  <Field label="Business Value">{project.businessValue}</Field>
+                ) : null}
+                {project.contribution ? (
+                  <Field label="My Contribution">{project.contribution}</Field>
                 ) : null}
 
                 <ul className="mt-6 flex flex-wrap gap-2">

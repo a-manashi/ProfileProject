@@ -33,6 +33,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
   title: site.seo.title,
   description: site.seo.description,
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
@@ -55,12 +58,41 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
+  const siteUrl = getSiteUrl();
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": `${siteUrl}/#person`,
+        name: site.name,
+        jobTitle: site.role,
+        url: siteUrl,
+        email: site.email,
+        description: site.seo.description,
+        sameAs: site.socials.map((social) => social.href),
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": `${siteUrl}/#service`,
+        name: site.name,
+        url: siteUrl,
+        description: site.seo.description,
+        provider: { "@id": `${siteUrl}/#person` },
+      },
+    ],
+  };
+
   return (
     <html
       lang="en"
       className={`${instrumentSans.variable} ${ibmPlexSans.variable} ${ibmPlexMono.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-canvas font-sans text-ink">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         <a href="#main" className="skip-link">
           Skip to content
         </a>

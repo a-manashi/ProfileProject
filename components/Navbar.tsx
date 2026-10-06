@@ -112,10 +112,10 @@ export function Navbar() {
             })}
           </ul>
           <a
-            href="#contact"
+            href={site.navCta.href}
             className="rounded-md border border-line px-3 py-1.5 text-sm text-ink transition-colors hover:border-accent/50 hover:bg-elevated"
           >
-            Let&apos;s talk
+            {site.navCta.label}
           </a>
         </nav>
 
@@ -158,11 +158,11 @@ export function Navbar() {
             })}
             <li>
               <a
-                href="#contact"
+                href={site.navCta.href}
                 className="block py-3 text-base text-accent"
                 onClick={close}
               >
-                Let&apos;s talk
+                {site.navCta.label}
               </a>
             </li>
           </ul>

@@ -1,7 +1,6 @@
 import {
-  BarChart3,
   Cloud,
-  Database,
+  Layers,
   PanelsTopLeft,
   Server,
   Workflow,
@@ -17,10 +16,9 @@ import { skills } from "@/lib/content";
 const categoryIcons = {
   Backend: Server,
   Frontend: PanelsTopLeft,
-  Databases: Database,
-  "Cloud & Infrastructure": Cloud,
-  "Data / Analytics": BarChart3,
-  "Engineering / Automation": Workflow,
+  "Data & Infrastructure": Cloud,
+  "AI & Automation": Workflow,
+  "Additional Experience": Layers,
 } as const;
 
 export function Skills() {
@@ -43,11 +41,17 @@ export function Skills() {
 
             return (
               <Reveal key={category.title} delayMs={index * 60}>
-                <Card className="h-full">
+                <Card
+                  className={
+                    category.title === "Additional Experience"
+                      ? "h-full sm:col-span-2 lg:col-span-3"
+                      : "h-full"
+                  }
+                >
                   <div className="mb-4 flex items-center gap-3">
                     {Icon ? (
                       <span className="inline-flex size-9 items-center justify-center rounded-md border border-line text-accent">
-                        <Icon size={16} strokeWidth={1.75} />
+                        <Icon size={16} strokeWidth={1.75} aria-hidden />
                       </span>
                     ) : null}
                     <h3 className="font-display text-lg text-ink">

@@ -14,7 +14,7 @@ export function Hero() {
       <div className="hero-beam" />
       <Container className="relative grid items-center gap-12 pt-8 pb-16 md:pt-10 md:pb-20 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-16 lg:pt-12 lg:pb-24">
         <div>
-          <p className="hero-in inline-flex rounded-full border border-accent/40 px-3 py-1 font-mono text-[11px] text-accent">
+          <p className="hero-in inline-block max-w-full rounded-full border border-accent/40 px-3 py-1 font-mono text-[11px] leading-5 text-accent">
             {hero.eyebrow}
           </p>
           <h1
@@ -27,7 +27,12 @@ export function Hero() {
             {hero.tagline}
           </p>
           <p className="hero-in hero-in-3 mt-5 max-w-xl text-base leading-relaxed text-mute">
-            {hero.summary}
+            {hero.summaryBefore}
+            <strong className="font-medium text-ink">{hero.summaryEmphasis}</strong>
+            {hero.summaryAfter}
+          </p>
+          <p className="hero-in hero-in-3 mt-4 max-w-xl text-base leading-relaxed text-mute">
+            {hero.experience}
           </p>
 
           <ul className="hero-in hero-in-3 mt-7 flex flex-wrap gap-2">

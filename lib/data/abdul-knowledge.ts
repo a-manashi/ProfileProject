@@ -4,14 +4,38 @@ export const abdulKnowledge = {
   identity: {
     name: "Abdul Manashi",
     titles: [
-      "Senior Full-Stack Engineer",
+      "Senior Software Engineer",
+      "Senior Software Engineer for Complex Web Applications",
       "Software Developer",
       "Programmer",
       "Problem Solver",
     ],
   },
   summary:
-    "Abdul is a Full-Stack Software Developer with 15+ years of experience building scalable web applications, analytics systems, automation tools, e-commerce platforms, video streaming solutions, and cloud infrastructure. His current specialization is Python, Django, FastAPI, React.js, PostgreSQL, and modern cloud infrastructure. He also uses AI-assisted development tools to improve development speed, productivity, debugging, refactoring, exploration, documentation, and problem solving. He has built MCP (Model Context Protocol) integrations that allow Claude to connect to Google and other platforms such as Facebook and Reddit.",
+    "Abdul is a senior software engineer with 20+ years of experience designing, building, modernizing, and maintaining production web applications. He helps businesses build, modernize, and scale complex web applications — from legacy systems that need a safe modernization path to new Python/React platforms, APIs, automation, and AI integrations. His current focus is Python, Django, FastAPI, React, PostgreSQL, cloud infrastructure, automation, and AI integration. He understands both legacy PHP systems and modern architectures, so modernization does not have to mean throwing away everything that already works. AI is a modern engineering capability he uses alongside broader software engineering experience, not his only specialization.",
+  services: [
+    "Legacy application modernization for older PHP and web applications, improving architecture, APIs, databases, performance, security, and user experience without automatically requiring a complete rewrite",
+    "Custom web applications and APIs: production-ready business applications, backend services, REST APIs, dashboards, and internal platforms",
+    "Automation, data, and integrations: API integrations, web scraping, automated workflows, reporting systems, data pipelines, tracking platforms, and operational dashboards",
+    "AI and platform integrations, including AI-powered workflows, MCP servers, and connections between business systems and AI platforms",
+  ],
+  audience: [
+    "Startups building or scaling technical products",
+    "Small and medium businesses that need custom software",
+    "Companies with legacy applications that need modernization",
+    "Digital agencies that need an experienced engineering partner",
+    "SaaS companies needing backend/API development",
+    "Businesses looking to automate manual workflows",
+    "Teams needing senior engineering support without hiring full-time",
+  ],
+  process: [
+    "Understand: business requirements and existing system",
+    "Design: architecture, APIs, database and technical roadmap",
+    "Build: backend, frontend, integrations and automation",
+    "Deploy: cloud infrastructure, CI/CD and production deployment",
+    "Improve: monitoring, optimization and ongoing development",
+    "He is also available for a single stage: consulting, architecture, troubleshooting, development, modernization, or longer-term engineering support",
+  ],
   backend: [
     "Python",
     "Django",
@@ -106,29 +130,29 @@ export const abdulKnowledge = {
     "Other platform connectors so Claude can work inside real tools and workflows",
   ],
   aiPhilosophy:
-    "AI is an engineering multiplier, not a replacement for engineering judgment.",
+    "AI is an engineering multiplier, not a replacement for engineering judgment. It is a competitive advantage alongside broader software engineering experience, not Abdul's only specialization.",
   philosophy: [
     {
-      title: "Understand the problem",
-      body: "Understand the business problem before choosing technology.",
+      title: "Business First",
+      body: "Understand the problem before choosing the technology.",
     },
     {
-      title: "Build for production",
-      body: "Consider maintainability, reliability, scalability, security, and operational simplicity.",
+      title: "Production Ready",
+      body: "Reliability, security, maintainability and operational simplicity matter.",
     },
     {
-      title: "Solve problems, not just write code",
-      body: "The goal is to build software that solves a real business problem.",
+      title: "Incremental Modernization",
+      body: "Improve existing systems without unnecessary rewrites.",
     },
     {
-      title: "Think end-to-end",
-      body: "Business problem → Architecture → Backend → Database → Frontend → Infrastructure → Analytics",
+      title: "AI as a Multiplier",
+      body: "Use AI to accelerate engineering without replacing engineering judgment.",
     },
   ],
   projectFit:
-    "Abdul is particularly well suited to complex web applications, analytics platforms, automation systems, business management software, subscription systems, full-stack products where backend architecture and business logic are important, and AI integrations such as MCP connectors for Claude.",
+    "Abdul is particularly well suited to complex web applications, legacy application modernization, Python/Django/FastAPI/React development, automation, APIs and integrations, and AI integrations such as MCP connectors for Claude. He is available for freelance projects, consulting, technical architecture, development, and ongoing engineering support.",
   contact:
-    "Visitors can email Abdul at abdul.manashi@hotmail.com or reach him on LinkedIn at https://www.linkedin.com/in/abdul-manashi-39b64522/. They can also use the Contact section of this portfolio. Do not invent a different email address or social URL.",
+    "Visitors should use the project inquiry form in the Contact section of this website. They can also email Abdul at abdul.manashi@hotmail.com or reach him on LinkedIn at https://www.linkedin.com/in/abdul-manashi-39b64522/. Do not invent a different email address, social URL, rates, or availability calendar.",
   unknownPolicy:
     "If information is not in this knowledge base, say: I don't have that information in Abdul's portfolio yet.",
 } as const;
@@ -139,6 +163,9 @@ export function formatKnowledgeBase() {
     `Name: ${k.identity.name}`,
     `Titles: ${k.identity.titles.join(", ")}`,
     `Summary: ${k.summary}`,
+    `Services:\n${k.services.map((item) => `- ${item}`).join("\n")}`,
+    `Who he typically works with:\n${k.audience.map((item) => `- ${item}`).join("\n")}`,
+    `How a project works:\n${k.process.map((item) => `- ${item}`).join("\n")}`,
     `Backend: ${k.backend.join(", ")}`,
     `Frontend: ${k.frontend.join(", ")}`,
     `Databases: ${k.databases.join(", ")}`,
