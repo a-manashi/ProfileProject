@@ -128,3 +128,20 @@ export function formatInquiryEmail(input: InquiryFields) {
     input.help.trim(),
   ].join("\n");
 }
+
+export function formatThankYouEmail(name: string) {
+  const greeting = name.trim().split(/\s+/)[0] || "there";
+
+  return [
+    `Hi ${greeting},`,
+    "",
+    "Thanks for getting in touch. I received your project inquiry and will review it shortly.",
+    "",
+    "If it looks like a good fit, I'll follow up so we can discuss goals, scope, constraints, and possible approaches.",
+    "",
+    "You don't need to reply to this message unless you have more context to add.",
+    "",
+    "Abdul Manashi",
+    "Senior Software Engineer",
+  ].join("\n");
+}

@@ -1,6 +1,7 @@
 import { Resend } from "resend";
 import {
   formatInquiryEmail,
+  formatThankYouEmail,
   readInquiry,
   validateInquiry,
 } from "@/lib/contact/schema";
@@ -61,6 +62,18 @@ export async function POST(request: Request) {
         { error: "The inquiry could not be sent. Please try again or email me directly." },
         { status: 502 },
       );
+    }
+
+    try {
+      await resend.emails.send({
+        from,
+        to: inquiry.email.trim(),
+        replyTo: to,
+        subject: "I received your project inquiry",
+        text: formatThankYouEmail(inquiry.name),
+      });
+    } catch {
+      // The inquiry already reached you; a missed confirmation should not fail the form.
     }
 
     return Response.json({ ok: true });

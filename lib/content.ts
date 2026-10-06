@@ -371,7 +371,7 @@ export const contact = {
     "Tell me a little about what you're building, what isn't working, or what you'd like to improve. I'll review the details and get back to you.",
   submitLabel: "Send Project Inquiry",
   success:
-    "Thanks — your project inquiry is on its way. I'll review it and get back to you.",
+    "Thanks — your project inquiry is on its way. I'll review it and get back to you. You should also receive a short confirmation email.",
   error:
     "The inquiry could not be sent. Please try again or email me directly.",
   unavailable:
