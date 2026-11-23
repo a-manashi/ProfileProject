@@ -420,7 +420,8 @@ export const timelines = [
 ] as const;
 
 export const budgets = [
-  "Under $1,000",
+  "Under $100",
+  "$100–$1,000",
   "$1,000–$3,000",
   "$3,000–$10,000",
   "$10,000+",

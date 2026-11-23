@@ -189,11 +189,12 @@ export function InquiryForm() {
         />
       </Field>
 
-      <div className="grid min-w-0 gap-5 md:grid-cols-3">
+      <div className="grid min-w-0 items-start gap-5 md:grid-cols-3">
         <Field
           id={`${formId}-type`}
           label="Project type"
           error={errors.projectType}
+          alignSelect
         >
           <select
             id={`${formId}-type`}
@@ -215,6 +216,7 @@ export function InquiryForm() {
           id={`${formId}-timeline`}
           label="Expected timeline"
           error={errors.timeline}
+          alignSelect
         >
           <select
             id={`${formId}-timeline`}
@@ -236,6 +238,7 @@ export function InquiryForm() {
           id={`${formId}-budget`}
           label="Estimated budget"
           error={errors.budget}
+          alignSelect
         >
           <select
             id={`${formId}-budget`}
@@ -294,26 +297,34 @@ function Field({
   label,
   required,
   error,
+  alignSelect,
   children,
 }: {
   id: string;
   label: string;
   required?: boolean;
   error?: string;
+  alignSelect?: boolean;
   children: ReactNode;
 }) {
   const errorId = `${id}-error`;
 
   return (
-    <div>
-      <label htmlFor={id} className="text-sm text-ink">
-        {label}
+    <div className="min-w-0">
+      <label
+        htmlFor={id}
+        className={cn(
+          "flex flex-wrap items-end gap-x-2 text-sm leading-snug text-ink",
+          alignSelect && "min-h-10",
+        )}
+      >
+        <span>{label}</span>
         {required ? (
-          <span className="ml-1 text-accent" aria-hidden>
+          <span className="text-accent" aria-hidden>
             *
           </span>
         ) : (
-          <span className="ml-2 text-xs text-mute">Optional</span>
+          <span className="text-xs leading-snug text-mute">Optional</span>
         )}
       </label>
       {children}
