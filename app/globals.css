@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
-:root {
+:root,
+[data-theme="current"] {
   --canvas: #070b14;
   --surface: #111827;
   --elevated: #1a2234;
@@ -10,6 +11,20 @@
   --accent: #22d3ee;
   --accent-hover: #67e8f9;
   --terminal: #22d3ee;
+  --brand-dark: #0c4a6e;
+}
+
+[data-theme="forest"] {
+  --canvas: #050505;
+  --surface: #171817;
+  --elevated: #20211f;
+  --line: #2a2b29;
+  --ink: #fcfffa;
+  --mute: #888a87;
+  --accent: #83d65c;
+  --accent-hover: #a3e87f;
+  --terminal: #83d65c;
+  --brand-dark: #113601;
 }
 
 @theme inline {
@@ -30,7 +45,7 @@
 html {
   color-scheme: dark;
   scroll-behavior: smooth;
-  scrollbar-color: #1e293b #070b14;
+  scrollbar-color: var(--line) var(--canvas);
 }
 
 body {
@@ -69,8 +84,16 @@ body {
 
 .hero-grid {
   background-image:
-    linear-gradient(to right, rgba(34, 211, 238, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(34, 211, 238, 0.04) 1px, transparent 1px);
+    linear-gradient(
+      to right,
+      color-mix(in srgb, var(--accent) 4%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--accent) 4%, transparent) 1px,
+      transparent 1px
+    );
   background-size: 72px 72px;
   mask-image: radial-gradient(ellipse 75% 65% at 55% 40%, black 18%, transparent 78%);
 }
@@ -82,9 +105,17 @@ body {
   background: linear-gradient(
     118deg,
     transparent 28%,
-    rgba(34, 211, 238, 0.07) 48%,
+    color-mix(in srgb, var(--accent) 7%, transparent) 48%,
     transparent 66%
   );
+}
+
+.shadow-accent-glow {
+  box-shadow: 0 0 24px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.shadow-accent-soft {
+  box-shadow: 0 0 40px color-mix(in srgb, var(--accent) 6%, transparent);
 }
 
 .hero-in {
@@ -150,12 +181,12 @@ body {
   0%,
   100% {
     transform: translateY(0);
-    box-shadow: 0 0 24px rgba(34, 211, 238, 0.16);
+    box-shadow: 0 0 24px color-mix(in srgb, var(--accent) 16%, transparent);
   }
 
   50% {
     transform: translateY(-3px);
-    box-shadow: 0 0 32px rgba(34, 211, 238, 0.28);
+    box-shadow: 0 0 32px color-mix(in srgb, var(--accent) 28%, transparent);
   }
 }
 

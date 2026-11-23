@@ -2,6 +2,7 @@
 
 import { useEffect, useId, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { Container } from "@/components/ui/Container";
 import { cn } from "@/lib/cn";
 import { site } from "@/lib/site";
@@ -111,6 +112,7 @@ export function Navbar() {
               );
             })}
           </ul>
+          <ThemeToggle />
           <a
             href={site.navCta.href}
             className="rounded-md border border-line px-3 py-1.5 text-sm text-ink transition-colors hover:border-accent/50 hover:bg-elevated"
@@ -119,16 +121,19 @@ export function Navbar() {
           </a>
         </nav>
 
-        <button
-          type="button"
-          className="inline-flex size-10 items-center justify-center rounded-md border border-line text-ink md:hidden"
-          aria-expanded={open}
-          aria-controls={menuId}
-          aria-label={open ? "Close menu" : "Open menu"}
-          onClick={() => setOpen((value) => !value)}
-        >
-          {open ? <X size={18} /> : <Menu size={18} />}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle />
+          <button
+            type="button"
+            className="inline-flex size-10 items-center justify-center rounded-md border border-line text-ink"
+            aria-expanded={open}
+            aria-controls={menuId}
+            aria-label={open ? "Close menu" : "Open menu"}
+            onClick={() => setOpen((value) => !value)}
+          >
+            {open ? <X size={18} /> : <Menu size={18} />}
+          </button>
+        </div>
       </Container>
 
       <div

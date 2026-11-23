@@ -14,15 +14,22 @@ export const ChatbotLauncher = forwardRef<HTMLButtonElement, ChatbotLauncherProp
         aria-label="Open Ask Abdul AI"
         className="ask-launcher group fixed right-4 bottom-4 z-[60] flex flex-col items-center gap-2 md:right-6 md:bottom-6"
       >
-        <span className="ask-launcher-face relative flex size-16 items-center justify-center rounded-full border border-accent/30 bg-surface shadow-[0_0_24px_rgba(34,211,238,0.16)]">
+        <span className="ask-launcher-face relative flex size-16 items-center justify-center rounded-full border border-accent/30 bg-surface text-accent">
           <svg viewBox="0 0 64 64" className="size-10" aria-hidden>
-            <circle cx="32" cy="32" r="22" fill="none" stroke="#22d3ee" strokeOpacity="0.35" />
-            <circle cx="24" cy="30" r="2.2" fill="#22d3ee" />
-            <circle cx="40" cy="30" r="2.2" fill="#22d3ee" />
+            <circle
+              cx="32"
+              cy="32"
+              r="22"
+              fill="none"
+              stroke="currentColor"
+              strokeOpacity="0.35"
+            />
+            <circle cx="24" cy="30" r="2.2" fill="currentColor" />
+            <circle cx="40" cy="30" r="2.2" fill="currentColor" />
             <path
               d="M26 38 C30 41, 34 41, 38 38"
               fill="none"
-              stroke="#22d3ee"
+              stroke="currentColor"
               strokeWidth="1.4"
               strokeLinecap="round"
             />

@@ -1,6 +1,6 @@
 export function TerminalVisual() {
   return (
-    <div className="relative overflow-hidden rounded-xl border border-line bg-canvas shadow-[0_0_40px_rgba(34,211,238,0.06)]">
+    <div className="shadow-accent-soft relative overflow-hidden rounded-xl border border-line bg-canvas">
       <div className="flex items-center gap-2 border-b border-line px-4 py-3">
         <span className="size-2.5 rounded-full bg-[#ff5f57]" />
         <span className="size-2.5 rounded-full bg-[#febc2e]" />
