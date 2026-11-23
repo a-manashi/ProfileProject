@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { cn } from "@/lib/cn";
 import {
-  applyTheme,
-  getStoredTheme,
+  getServerThemeSnapshot,
+  getThemeSnapshot,
   setTheme,
+  subscribeTheme,
   type Theme,
 } from "@/lib/theme";
 
@@ -19,18 +20,11 @@ const options: Array<{ id: Theme; label: string; swatch: string }> = [
 ];
 
 export function ThemeToggle({ className }: ThemeToggleProps) {
-  const [theme, setThemeState] = useState<Theme>("current");
-
-  useEffect(() => {
-    const stored = getStoredTheme();
-    setThemeState(stored);
-    applyTheme(stored);
-  }, []);
-
-  function select(next: Theme) {
-    setThemeState(next);
-    setTheme(next);
-  }
+  const theme = useSyncExternalStore(
+    subscribeTheme,
+    getThemeSnapshot,
+    getServerThemeSnapshot,
+  );
 
   return (
     <div
@@ -48,7 +42,7 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
             key={option.id}
             type="button"
             aria-pressed={selected}
-            onClick={() => select(option.id)}
+            onClick={() => setTheme(option.id)}
             className={cn(
               "inline-flex items-center gap-1.5 rounded px-2 py-1 font-mono text-[10px] tracking-[0.12em] uppercase transition-colors",
               selected
